@@ -1,0 +1,2 @@
+Assignment2/nosara_labeled.csv filter=lfs diff=lfs merge=lfs -text
+Assignment2/nosara_unlabeled.zip filter=lfs diff=lfs merge=lfs -text
