@@ -235,4 +235,44 @@ Task:
 
 Target:
 
-    
+     It is important to understand the strengths and limitations of the data because rarely is there an exact match with the problem.
+
+    A critical part of the data understanding phase is estimating the costs and benefits of each data source and deciding whether further investment is merited. 
+
+#### Data Preparation
+
+Target:
+
+    Data comes from different form. Therefore a data preparation phase often proceeds along with data understanding, in which the data are manipulated and converted into forms that yield better results.
+
+Task:   
+
+    Typical examples of data preparation are converting data to tabular format, removing or inferring missing values, and converting data to different types. Some data mining techniques  are  designed  for  symbolic  and  categorical  data,  while  others  handle  only numeric values. In addition, numerical values must often be normalized or scaled so that they are comparable. Standard techniques and rules of thumb are available for doing such conversions. 
+
+    One very general and important concern during data preparation is to beware of “leaks” (Kaufman et al. 2012). A leak is a situation where a variable collected in historical data gives  information  on  the  target  variable—information  that  appears  in  historical  data but is not actually available when the decision has to be made. 
+
+#### Modeling
+
+Target:
+
+    The modeling stage is the primary place where data mining techniques are applied to the data. It is important to have some understanding of the fundamental ideas of data mining, including the sorts of techniques and algorithms that exist, because this is the part of the craft where the most science and technology can be brought to bear.
+
+    *** more details in week2 and 3
+
+#### Evaluation 
+
+Target
+
+    The purpose of the evaluation stage is to assess the data mining results rigorously and to gain confidence that they are valid and reliable before moving on.
+
+    Equally important, the evaluation stage also serves to help ensure that the model satisfies the original business goals.
+
+Task:
+
+    Evaluating the results of data mining includes both quantitative and qualitative assessments.
+
+#### Deployment 
+
+Target
+
+    Using yhe evaluated data to predict real data/
