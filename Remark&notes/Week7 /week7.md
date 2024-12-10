@@ -50,4 +50,12 @@ ChatGPT is LLM
 A sequence of works(the quick brown) -> LLM -> next word(Fox)
 
 Feature: embedding 
+it repeats and repeats until it works (End-of-transmission token)
 
+### Transformer 
+
+### Training 
+
+#### Part1 
+
+#### Part2 (Human Feedback)

@@ -20,4 +20,5 @@ This chapter is aims to solve this question
 
 ### Generalization
 
-Taking a (Extreme) Example, MegaTelCo, it want to reducing churn
+Taking a (Extreme) Example, MegaTelCo, it want to reducing churn. 
+Does 100% accurate model is the best ?
