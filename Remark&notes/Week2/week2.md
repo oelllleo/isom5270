@@ -434,4 +434,18 @@ the odds range from 0 to ∞. Nonetheless, we can solve our garden-path problem 
 ![alt text](image-32.png)
 
 ### Example: Logistic Regression vs Tree Induction
-
+Though classification trees and linear classifiers both use linear decision boundaries,
+there are two important differences between them:
+1. A classification tree uses decision boundaries that are perpendicular to the instance-
+space axes (see Figure 4-1), whereas the linear classifier can use decision boundaries
+of any direction or orientation (see Figure 4-3). This is a direct consequence of the
+fact that classification trees select a single attribute at a time whereas linear classifiers
+use a weighted combination of all attributes.
+2. A classification tree is a “piecewise” classifier that segments the instance space re‐
+cursively when it has to, using a divide-and-conquer approach. In principle, a clas‐
+sification tree can cut up the instance space arbitrarily finely into very small regions
+(though we will see reasons to avoid that in Chapter 5). A linear classifier places a
+single decision surface through the entire space. It has great freedom in the orien‐
+tation of the surface, but it is limited to a single division into two segments. This is
+a direct consequence of there being a single (linear) equation that uses all of the
+variables, and must fit the entire data space
