@@ -19,3 +19,5 @@ Remember Week2 leaving question :
 This chapter is aims to solve this question
 
 ### Generalization
+
+Taking a (Extreme) Example, MegaTelCo, it want to reducing churn

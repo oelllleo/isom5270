@@ -258,6 +258,9 @@ Fundamental  concepts:
 - Support-vector machines
 
 It also focusing on Model. But specific in parameterized model
+One key point highlight here.
+
+
 
 ### Classification via Mathematical Function 
 
@@ -381,6 +384,8 @@ they may fall in the margin.***The margin-maximizing boundary gives the maximal 
     ![alt text](image-30.png)
 
 ### Loss Function
+
+Loss Function is subset of Objective function 
 
 The term “loss” is used across data science as a general term for error penalty. A loss function determines how much penalty should be assigned to an instance based on the error in the model’s predicted value—in our present context, based on its distance from the separation boundary. 
 
