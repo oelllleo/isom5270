@@ -134,11 +134,74 @@ Finally, compare the fold accuracies between logistic regression and classificat
 
 On this particular dataset, trees may  be  preferable  to  logistic  regression  because  of  their  greater  stability  and  performance. But this is not absolute; other datasets will produce different results, as we shall see.
 
-### learning Curves
+### Learning Curves
 If the training set size changes, you may also expect different generalization performance from the resultant model. 
 
 All else being equal, the generalization performance of data driven  modeling  generally  improves  as  more  training  data  become  available,  up  to  a point. A plot of the generalization performance against the amount of training data is called a learning curve. The learning curve is another important analytical tool.
 
 ![alt text](image-11.png)
-Learning curves for tree induction and logistic regression are shown in Figure 5-11 for
-the telecommunications churn problem
+Learning curves for tree induction and logistic regression are shown in Figure 5-11 for the telecommunications churn problem
+
+### Overfitting Avpidance and Complexity Control
+
+To avoid overfitting, we control the complexity of the models induced from the data.
+
+### Avoiding Overfitting with Tree Induction
+
+The  main  problem  with  tree  induction  is  that  it  will  keep  growing  the  tree  to  fit  the training data until it creates pure leaf nodes.This will likely result in large, overly complex trees that overfit the data
+
+Tree induction commonly  uses  two  techniques  to  avoid  overfitting.
+
+1. stop growing the tree before it gets too complex
+2. grow the tree until it is too large, then “prune” it back, reducing its size
+
+The simplest method to limit tree size is to specify a minimum number of instances that must be present in a leaf. 
+The idea behind this minimum-instance stopping criterion is that for predictive modeling,
+we essentially are using the data at the leaf to make a statistical estimate of the value of the target variable for future cases that would fall to that leaf
+
+If we make predictions of the target based on a very small subset of data, we might expect them to be inaccurate — especially when we built the tree specifically to try to get pure leaves
+
+A nice property of controlling complexity in this way is that tree induction will automatically grow the tree branches that have a lot of data and cut short branches that have fewer data—thereby automatically adapting the model based on the data distribution
+
+Statistics provides the notion of a “hypothesis test,” which you might recall from a basic statistics class. Roughly, a hypothesis test tries to assess whether a difference in some statistic is not due simply to chance.In most cases, the hypothesis test is based on a “p-
+value,”  which  gives  a  limit  on  the  probability  that  the difference  in  statistic  is  due  to chance.
+
+If  this  value  is  below  a  threshold  (often  5%,  but  problem  specific),  then  the hypothesis test concludes that the difference is likely not due to chance.
+
+an alternative to setting a fixed size for the leaves is to conduct a hypothesis test at every leaf to determine whether the observed difference in (say) information gain could have been due to chance. If the hypothesis test concludes that it was likely not due to chance, then the split is accepted and the tree growing continues.
+
+The second strategy for reducing overfitting is to “prune” an overly large tree. Pruning means to cut off leaves and branches, replacing them with leaves.One general idea is to estimate whether replacing a set of leaves or a branch with a leaf would reduce accuracy.  If not, then go ahead and prune. 
+
+### A General Method for Avoiding Overfitting
+1. Nested Holdout Testing: To evaluate models without using test data, the initial training set can be split into a sub-training set and a validation set. Models are trained on the sub-training set and evaluated on the validation set to determine the best complexity.
+2. Final Model Training: After identifying the optimal model complexity, a new model can be built using the entire original training set.
+3. Nested Cross-Validation: This more complex approach involves performing cross-validation on the training set to determine an optimal complexity parameter (C) for each fold of the outer cross-validation. This results in a higher number of models being trained, improving model selection while managing computational resources.
+4. Feature Selection: Techniques like Sequential Forward Selection (SFS) utilize nested holdout procedures to identify the best set of features, adding one feature at a time until no performance gain is observed. Similar methods exist for feature elimination.
+
+
+### Avoiding Overfitting for Parameter Optimization
+
+As just described, avoiding overfitting involves complexity control: finding the “right” balance between the fit to the data and the complexity of the model.
+
+For equations, such as logistic regression, that unlike trees do not automatically select what attributes to include, complexity can be controlled by choosing a “right” set of attributes
+
+This  general  methodology  is  called  regularization,  a  term  that  is  heard  often  in  data science discussions
+
+Recall from Chapter 4 that to fit a model involving numeric parameters w to the data we find the set of parameters that maximizes some “objective function” indicating how well it fits the data:
+
+
+![alt text](image-12.png)
+
+The λ term is simply a weight that determines how much importance the optimization procedure should place on the penalty, compared to the data fit. At this point, the modeler has to choose λ and the penalty function
+
+For Logistic Regression
+
+![alt text](image-14.png)
+![alt text](image-15.png)
+
+For SVM: 
+
+![alt text](image-16.png)
+
+Question : how to choice correct Lambda  λ 
+It turns out that we already have a straightforward way to choose λ. We’ve discussed how a good tree size and a good feature set can be chosen via nested cross-validation on the training data. We can choose λ the same way.
