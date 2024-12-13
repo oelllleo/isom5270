@@ -1,4 +1,4 @@
-# Week4 
+# Week5 
 ## CHAPTER 11: Decision Analytic Thinking II: Toward Analytical Engineering 
 
 Fundamental concept:
@@ -108,6 +108,16 @@ Let’s expand the equation for VT, but at the same time simplify by assuming th
 ![alt text](image-8.png)
 where (Δ( p)) is the difference in the predicted probabilities of staying, depending on whether the customer is targeted or not. 
 
+### From an Expected Value Decomposition to a Data Science Solution
+
+Importantly, the expected value decomposition focuses our Data Understanding efforts. What data do we need to build these models? 
+
+In both cases, we need samples of cus‐ tomers who have reached contract expiration. Indeed, we need samples of customers who have gone far enough beyond contract expiration that we are satisfied with concluding they have definitely “stayed” or “left.” For the first model we need a sample of customers who were targeted with the offer. For the second model, we need a sample of customers who were not targeted with the offer. 
 
 
+How can we obtain a sample of such customers who have not been targeted with the offer?  
+
+1. we  should  assure  ourselves  that  nothing  substantial  has  changed  in  the business environment that would call into question the use of historical data for churn prediction 
+
+2. Assuming there has been no such event, gathering the requisite data should be relatively straightforward:
 
